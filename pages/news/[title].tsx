@@ -1,15 +1,15 @@
 import type { NextPage } from "next";
-import Card from "../src/components/card";
-import Layout from "../src/components/layout";
+import Card from "../../src/components/card";
+import Layout from "../../src/components/layout";
 import axios from "axios";
 import { GetServerSideProps } from "next";
-import { topHeadlinesType } from "../src/types";
+import { topHeadlinesType } from "../../src/types";
 
 const Home: NextPage<{data: topHeadlinesType}> = ({data}) => {
   return (
     <>
       <Layout>
-        <Card topHeadlines={data}/>
+        <h1>hello</h1>
       </Layout>
     </>
   );

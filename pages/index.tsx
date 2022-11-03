@@ -20,24 +20,22 @@ const Home: NextPage<{ data: topHeadlinesType }> = ({ data }) => {
   }, [loadMoreCount]);
 
   return (
-    <>
-      <Layout>
-        <Card topHeadlines={newsData} />
-        <div className="flex justify-center">
-          {loading ? (
-            <Spinner />
-          ) : (
-            Math.ceil(data.length / 6) > loadMoreCount && (
-              <Button
-                onclick={() => setLoadMoreCount((count) => count + 1)}
-                classes="text-center py-2 px-4 bg-blue-700 text-white my-5 rounded-full"
-                label=" Load More"
-              />
-            )
-          )}
-        </div>
-      </Layout>
-    </>
+    <Layout>
+      <Card topHeadlines={newsData} />
+      <div className="flex justify-center">
+        {loading ? (
+          <Spinner />
+        ) : (
+          Math.ceil(data.length / 6) > loadMoreCount && (
+            <Button
+              onclick={() => setLoadMoreCount((count) => count + 1)}
+              classes="text-center py-2 px-4 bg-blue-700 text-white my-5 rounded-full"
+              label=" Load More"
+            />
+          )
+        )}
+      </div>
+    </Layout>
   );
 };
 

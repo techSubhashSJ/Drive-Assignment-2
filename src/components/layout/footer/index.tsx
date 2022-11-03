@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="text-gray-700 text-center p-4">
         © 2021 Copyright:{" "}
         <a className="text-gray-800" href="#">
-          subhash.jadhav@bluepineapple.org
+          subhash.jadhav@bluepineapple.io
         </a>
       </div>
     </footer>

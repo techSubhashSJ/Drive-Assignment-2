@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default function NavBar() {
+const NavBar = () => {
   const [navbar, setNavbar] = useState(false);
 
   return (
@@ -77,4 +77,6 @@ export default function NavBar() {
       </div>
     </nav>
   );
-}
+};
+
+export default NavBar;

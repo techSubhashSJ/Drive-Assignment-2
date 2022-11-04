@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Card from "../../src/components/card";
 import Layout from "../../src/components/layout";
 import axios from "axios";
 import { GetServerSideProps } from "next";

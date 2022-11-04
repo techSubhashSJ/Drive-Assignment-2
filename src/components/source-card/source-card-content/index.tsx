@@ -17,7 +17,7 @@ const SourceCardContent = (props: { source: source }) => {
 
             <footer className="flex flex-col justify-between p-2 md:p-4">
               <p className="text-zinc-500">
-                {source?.description.slice(0, 120)}...
+                {source?.description.slice(0, 100)}...
               </p>
 
               <a

@@ -20,10 +20,7 @@ const CardContent = (props: { topHeadlines: topHeadlinesType }) => {
             <header className="flex items-center justify-between leading-tight p-2 md:p-4">
               <h1 className="text-lg">
                 <Link href={`/news/${headline?.title}`}>
-                  <a
-                    className="no-underline hover:underline text-black"
-                    href="#"
-                  >
+                  <a className="no-underline hover:underline text-black">
                     {headline?.title?.slice(0, 60)} ...
                   </a>
                 </Link>

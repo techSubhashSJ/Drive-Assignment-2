@@ -3,30 +3,30 @@ import Card from "../src/components/card";
 import Layout from "../src/components/layout";
 import axios from "axios";
 import { GetStaticProps } from "next";
-import { topHeadlinesType } from "../src/types";
+import { newsType } from "../src/types";
 import { useEffect, useState } from "react";
 import Spinner from "../src/components/spinner";
 import Button from "../src/components/button";
 
-const Home: NextPage<{ data: topHeadlinesType }> = ({ data }) => {
+const Home: NextPage<{ news: newsType}> = ({ news }) => {
   const [loadMoreCount, setLoadMoreCount] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
-  const [newsData, setNewsData] = useState<topHeadlinesType>(data.slice(0, 6));
+  const [newsData, setNewsData] = useState<newsType>(news.slice(0, 6));
 
   useEffect(() => {
     setLoading(true);
-    setNewsData(data.slice(0, loadMoreCount * 6));
+    setNewsData(news.slice(0, loadMoreCount * 6));
     setLoading(false);
   }, [loadMoreCount]);
 
   return (
     <Layout>
-      <Card topHeadlines={newsData} />
+      <Card news={newsData} />
       <div className="flex justify-center">
         {loading ? (
           <Spinner />
         ) : (
-          Math.ceil(data.length / 6) > loadMoreCount && (
+          Math.ceil(news.length / 6) > loadMoreCount && (
             <Button
               onclick={() => setLoadMoreCount((count) => count + 1)}
               classes="text-center py-2 px-4 bg-blue-700 text-white my-5 rounded-full"
@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      data: res.data.articles,
+      news: res.data.articles,
     },
   };
 };

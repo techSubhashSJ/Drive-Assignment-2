@@ -3,9 +3,9 @@ import Header from "./header";
 
 const Layout = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
   return (
-    <div className="flex flex-col h-screen justify-between">
+    <div className="flex flex-col min-h-screen justify-between">
       <Header />
-      {children}
+      <div className="flex-1">{children}</div>
       <Footer />
     </div>
   );

@@ -8,7 +8,7 @@ const SingleNews = (props: { news: topHeadlinesType }) => {
     <div className="mx-[10%] mt-5">
       {props?.news?.length === 0 ? (
         <>
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-20">
             <h1 className="text-4xl">No Result Found</h1>
           </div>
         </>

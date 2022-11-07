@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import Home from "../pages/index";
 import "@testing-library/jest-dom";
+import Cards from "../news-cards/cards";
 
 const newsData = [
   {
@@ -25,14 +25,8 @@ const newsData = [
   },
 ];
 
-describe("Home", () => {
-  it("renders a heading", () => {
-    render(<Home news={newsData} />);
-
-    const heading = screen.getByRole("heading", {
-      name: /India's Top Headlines/i,
-    });
-
-    expect(heading).toBeInTheDocument();
+describe("Button", () => {
+  it("Props passed to Button component should work as expected", async () => {
+    render(<Cards news={newsData} />);
   });
 });

@@ -12,9 +12,10 @@ const NewsBody = (props: {
         src={props?.image}
         alt="News image is not available"
         className="rounded"
+        data-testid="image"
       />
-      <p className=" mt-2">{props?.title}</p>
-      <p className="mt-7">
+      <p className=" mt-2" data-testid="paragraph1">{props?.title}</p>
+      <p className="mt-7" data-testid="paragraph2">
         {props?.content?.slice(0, props?.content?.length - 20)}...
       </p>
       <a

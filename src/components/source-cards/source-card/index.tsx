@@ -13,7 +13,7 @@ const SourceCard = (props: { source: singleSource }) => {
           </header>
 
           <footer className="flex flex-col justify-between py-2 px-4">
-            <p className="text-zinc-500">
+            <p className="text-zinc-500" data-testid="paragraph">
               {source?.description.slice(0, 100)}...
             </p>
 

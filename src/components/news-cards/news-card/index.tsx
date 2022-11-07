@@ -19,12 +19,13 @@ const NewsCard = (props: { news: singleNewsType }) => {
             alt="Image not available"
             className="block h-52 w-full"
             src={news?.urlToImage}
+            data-testid="image"
           />
 
           <header className="flex items-center justify-between leading-tight p-2 md:p-4">
             <h1 className="text-lg">
               <Link href={`/news/${news?.title}`}>
-                <a className="no-underline hover:underline text-black font-mono">
+                <a className="no-underline hover:underline text-black font-mono" data-testid="news-title">
                   {news?.title?.slice(0, 50)}...
                 </a>
               </Link>
@@ -32,7 +33,7 @@ const NewsCard = (props: { news: singleNewsType }) => {
           </header>
 
           <footer className="flex items-center justify-between leading-none p-2 md:p-4">
-            <p className="text-zinc-400">
+            <p className="text-zinc-400" data-testid="paragraph">
               Published date: {news?.publishedAt?.slice(0, 10)}
             </p>
           </footer>

@@ -21,7 +21,7 @@ const SourceCard = (props: { source: singleSource }) => {
               href={source?.url}
               target="_blank"
               rel="noreferrer"
-              className="text-center w-28 py-2 px-4 my-4 bg-blue-700 text-white mt-8 rounded-full"
+              className="text-center w-28 py-1 px-4 my-4 bg-blue-700 text-white mt-8 rounded-full"
             >
               Read More
             </a>

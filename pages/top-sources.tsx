@@ -11,10 +11,10 @@ import Layout from "../src/components/layout";
 import SourceCards from "../src/components/source-cards";
 import { source } from "../src/types/top-sources";
 
-const TopSources: NextPage<{ source: source }> = ({ source }) => {  
+const TopSources: NextPage<{ sources: source }> = ({ sources }) => {  
   return (
     <Layout>
-      <SourceCards source={source} />
+      <SourceCards sources={sources} />
     </Layout>
   );
 };
@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      source: res.data.sources,
+      sources: res.data.sources,
     },
   };
 };

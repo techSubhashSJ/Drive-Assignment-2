@@ -1,8 +1,13 @@
+/**
+ * @author Subhash Jadhav
+ * @description This is a page where you can search news by keywords or phrases
+ */
+
 import { NextPage } from "next";
 import React, { useState } from "react";
 import AlertMessage from "../src/components/alert-message";
 import Button from "../src/components/button";
-import Card from "../src/components/card";
+import NewsCards from "../src/components/news-cards";
 import Layout from "../src/components/layout";
 import SearchForm from "../src/components/search";
 import Spinner from "../src/components/spinner";
@@ -36,10 +41,10 @@ const SearchPage: NextPage = () => {
         {loading ? (
           <Spinner />
         ) : (
-          <Card news={result.slice(0, 6 * loadMoreCount)} />
+          <NewsCards news={result.slice(0, 9 * loadMoreCount)} />
         )}
         <div className="flex justify-center">
-          {Math.ceil(result.length / 6) > loadMoreCount && (
+          {Math.ceil(result.length / 9) > loadMoreCount && (
             <Button
               onclick={() => setLoadMoreCount((count) => count + 1)}
               classes="text-center py-2 px-4 bg-blue-700 text-white my-5 rounded-full"

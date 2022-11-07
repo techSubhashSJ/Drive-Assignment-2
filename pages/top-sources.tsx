@@ -1,14 +1,20 @@
+/**
+ * @author Subhash Jadhav
+ * @description This is a page where you will get top sources of news
+ * @params {array} array of source objects
+ */
+
 import axios from "axios";
 import { GetStaticProps, NextPage } from "next";
 import React from "react";
 import Layout from "../src/components/layout";
-import SourceCard from "../src/components/source-card";
+import SourceCards from "../src/components/source-cards";
 import { source } from "../src/types/top-sources";
 
 const TopSources: NextPage<{ source: source }> = ({ source }) => {  
   return (
     <Layout>
-      <SourceCard source={source} />
+      <SourceCards source={source} />
     </Layout>
   );
 };

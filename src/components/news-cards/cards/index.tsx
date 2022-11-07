@@ -1,8 +1,14 @@
+/**
+ * @author Subhash Jadhav
+ * @description This component is used to display news content on the card
+ * @params {array} array of news object
+ */
+
 import Link from "next/link";
 import React from "react";
 import { newsType } from "../../../types";
 
-const CardContent = (props: { news: newsType }) => {
+const Cards = (props: { news: newsType }) => {
   return (
     <>
       {props?.news?.map((oneNews, index) => (
@@ -20,8 +26,8 @@ const CardContent = (props: { news: newsType }) => {
             <header className="flex items-center justify-between leading-tight p-2 md:p-4">
               <h1 className="text-lg">
                 <Link href={`/news/${oneNews?.title}`}>
-                  <a className="no-underline hover:underline text-black">
-                    {oneNews?.title?.slice(0, 60)} ...
+                  <a className="no-underline hover:underline text-black font-mono">
+                    {oneNews?.title?.slice(0, 50)}...
                   </a>
                 </Link>
               </h1>
@@ -39,4 +45,4 @@ const CardContent = (props: { news: newsType }) => {
   );
 };
 
-export default CardContent;
+export default Cards;

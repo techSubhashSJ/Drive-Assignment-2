@@ -1,8 +1,7 @@
-import Link from "next/link";
 import React from "react";
 import { source } from "../../../types/top-sources";
 
-const SourceCardContent = (props: { source: source }) => {
+const Cards = (props: { source: source }) => {
   return (
     <>
       {props?.source.map((source, index) => (
@@ -36,4 +35,4 @@ const SourceCardContent = (props: { source: source }) => {
   );
 };
 
-export default SourceCardContent;
+export default Cards;

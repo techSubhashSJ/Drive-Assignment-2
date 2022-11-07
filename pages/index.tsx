@@ -29,7 +29,7 @@ const Home: NextPage<{ news: newsType }> = ({ news }) => {
     <Layout>
       <div className="flex justify-center mt-4 mx-[5%] px-4 md:px-12">
         <h1 className="uppercase text-2xl font-bold font-serif">
-          India's Top Headlines
+          India&apos;s Top Headlines
         </h1>
       </div>
 

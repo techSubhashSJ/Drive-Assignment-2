@@ -19,7 +19,7 @@ export default SingleNewsPage;
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const res = await axios.get(
-    `https://newsapi.org/v2/everything?q=${params?.title}&apiKey=${process.env.API_KEY}`
+    `https://newsapi.org/v2/everything?q=${params?.title}&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
   );
 
   return {

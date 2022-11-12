@@ -23,7 +23,7 @@ const SearchForm = (props: {
 
     try {
       const res = await axios.get(
-        `https://newsapi.org/v2/everything?q=${props.searchPhrase}&language=en&pageSize=20&apiKey=${process.env.API_KEY}`
+        `https://newsapi.org/v2/everything?q=${props.searchPhrase}&language=en&pageSize=20&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
       );
 
       if (res?.data?.articles?.length === 0) {
@@ -31,7 +31,6 @@ const SearchForm = (props: {
       } else {
         props.setResult(res.data.articles);
       }
-
     } catch (error) {
       props.setError("Interval server problem");
     }

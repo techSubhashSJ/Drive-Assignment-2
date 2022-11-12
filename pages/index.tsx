@@ -56,7 +56,7 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await axios.get(
-    `https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.API_KEY}`
+    `https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
   );
 
   return {

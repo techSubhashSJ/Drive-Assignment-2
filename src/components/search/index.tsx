@@ -38,8 +38,8 @@ const SearchForm = (props: {
     props.setLoading(false);
   };
   return (
-    <>
-      <div className="flex justify-between mt-10 flex-col md:flex-row mx-[10%]">
+    <div className="flex justify-center ">
+      <div className="flex justify-between mt-10 w-[100%] flex-col max-w-screen-xl  mx-[5%] px-4 md:px-12 md:flex-row">
         <div className="md:w-2/3 mt-2">
           <input
             type="text"
@@ -57,7 +57,7 @@ const SearchForm = (props: {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

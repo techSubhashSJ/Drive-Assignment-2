@@ -3,8 +3,16 @@ import "@testing-library/jest-dom";
 import AlertMessage from "../alert-message";
 
 describe("Alert Messages", () => {
-  it("Proper alert messages should be displayed on the screen according to props passed to the component", async () => {
-    render(<AlertMessage error="Please select a make" warning={null} />);
+  it("Error should be rendered on the screen if any", async () => {
+    render(<AlertMessage error="Internal Server Problem" warning={null} />);
+
+    expect(screen.getByRole("heading").textContent).toEqual(
+      "Internal Server Problem"
+    );
+  });
+
+  it("Warning should be rendered on the screen if any", async () => {
+    render(<AlertMessage error={null} warning="Please select a make" />);
 
     expect(screen.getByRole("heading").textContent).toEqual(
       "Please select a make"

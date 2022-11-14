@@ -13,19 +13,24 @@ const newsData = {
   title: "myTitle1",
 };
 
-describe("NewsCard", () => {
-  it("Props passed to NewsCard component should work as expected", async () => {
+describe("NewsCard Tests", () => {
+  it("Renders a image in the card with passed source", async () => {
     render(<NewsCard news={newsData} />);
 
-    //image testing
     const image = screen.getByTestId("image");
     image.getAttribute("src") === "/no-image.com";
+  });
 
-    //title testing
+  it("Renders a title in the card", async () => {
+    render(<NewsCard news={newsData} />);
+
     const title = screen.getByTestId("news-title");
     expect(title.textContent).toEqual("myTitle1...");
+  });
 
-    //Published date testing
+  it("Renders 'published at' date", async () => {
+    render(<NewsCard news={newsData} />);
+
     expect(screen.getByTestId("paragraph").textContent).toEqual(
       "Published date: 07-11-2022"
     );
